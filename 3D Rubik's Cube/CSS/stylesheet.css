@@ -1,0 +1,92 @@
+body{
+    width: 100%;
+    perspective: 600px;
+    overflow: hidden;
+    background-color: #2F2F2F;
+}
+
+#cube{
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+    transform-style: preserve-3d;
+    position: absolute;
+    transform-origin: 125px 225px;
+    animation: rotation 5s infinite alternate;
+}
+
+#cube > div{
+    width: 250px;
+    height: 250px;
+    backface-visibility: hidden;
+    position: absolute;
+    font-size: 0;
+    background-color: black;
+    border-radius: 5px;
+}
+
+#cube > div .square{
+    width: 28%;
+    height: 28%;
+    margin: 2.5%;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+#front-pane{
+    transform: translateZ(125px);
+}
+
+#right-pane{
+    transform: rotateY(90deg) translateZ(125px);
+}
+
+#back-pane{
+    transform: rotateY(180deg) translateZ(125px);
+}
+
+#left-pane{
+    transform: rotateY(270deg) translateZ(125px);
+}
+
+#bottom-pane{
+    transform: rotateZ(180deg) rotateX(90deg) translateZ(125px);
+}
+
+#top-pane{
+    transform: rotateZ(0deg) rotateX(90deg) translateZ(125px);
+}
+
+@keyframes rotation 
+{
+    0% {
+        transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(0deg) rotateZ(90deg);
+    }
+}
+
+#front-pane .square{
+    background: #FFFFFF;
+}
+
+#right-pane .square{
+    background: #B71234;
+}
+
+#left-pane .square{
+    background: #FF5800;
+}
+
+#back-pane .square{
+    background: #FFD500
+}
+
+#top-pane .square{
+    background: #0046AD;
+}
+
+#bottom-pane .square{
+    background: #009B48;
+}
