@@ -1,0 +1,11 @@
+html
+  head
+    title 3D CSS Rubik's Cube - Slim
+    meta name="author" content="Harry Milnes"
+    link rel="stylesheet" href="CSS/stylesheet.min.css"
+  body
+    #cube
+      -for i in (1..6)
+        #face
+          -for i in (1..9)
+            .sticker

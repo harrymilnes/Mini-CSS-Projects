@@ -1,0 +1,85 @@
+@cubeFaceSize: 250px;
+@perspective: (@cubeFaceSize*2.5);
+  
+body {
+  width: 100%;
+  perspective: @perspective;
+  overflow: hidden;
+  background-color: #2F2F2F;
+}
+
+#cube {
+  left: 45%;
+  transform-style: preserve-3d;
+  position: absolute;
+  transform-origin: (@cubeFaceSize/2) @cubeFaceSize;
+  animation: showcase 5s infinite alternate;
+
+  #face {
+    width: @cubeFaceSize;
+    height: @cubeFaceSize;
+    position: absolute;
+    font-size: 0;
+    background-color: black;
+
+    .sticker {
+      width: 28%;
+      height: 28%;
+      margin: 2.5%;
+      display: inline-block;
+      border-radius: 6px;
+    }
+  }
+}
+
+#face:nth-of-type(1) {
+  transform: translateZ((@cubeFaceSize/2));
+  .sticker {
+    background: #FFFFFF;
+  }
+}
+
+#face:nth-of-type(2) {
+  transform: rotateY(90deg) translateZ((@cubeFaceSize/2));
+  .sticker {
+    background: #B71234;
+  }
+}
+
+#face:nth-of-type(3) {
+  transform: rotateY(180deg) translateZ((@cubeFaceSize/2));
+  .sticker {
+    background: #FFD500;
+  }
+}
+
+#face:nth-of-type(4) {
+  transform: rotateY(270deg) translateZ((@cubeFaceSize/2));
+  .sticker {
+    background: #FF5800;
+  }
+}
+
+#face:nth-of-type(5) {
+  transform: rotateZ(180deg) rotateX(90deg) translateZ((@cubeFaceSize/2));
+  .sticker {
+    background: #009B48;
+  }
+}
+
+#face:nth-of-type(6) {
+  transform: rotateZ(0deg) rotateX(90deg) translateZ((@cubeFaceSize/2));
+  .sticker {
+    background: #0046AD;
+  }
+}
+
+@keyframes showcase {
+  0% {
+    transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(0deg) rotateZ(90deg);
+  }
+}
