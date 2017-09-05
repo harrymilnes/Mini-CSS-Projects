@@ -1,0 +1,218 @@
+body {
+    background: #10243F;
+    overflow: hidden;
+}
+.lamp {
+    width: 70px;
+    margin: auto;
+    position: relative;
+    margin-top: 50px;
+}
+.cone {
+    height: 40px;
+    width: 70px;
+    background: linear-gradient(90deg, grey, #ccc);
+    position: relative;
+    z-index: 1;
+}
+.cone:before,
+.cone:after {
+    border-bottom: 40px solid #ccc;
+}
+.cone:before {
+    left: -9px;
+    border-left: 9px solid transparent;
+    border-bottom: 40px solid grey;
+}
+.cone:after {
+    left: 70px;
+    border-right: 9px solid transparent;
+}
+.glass-top {
+    z-index: 1;
+    opacity: 0.18;
+    left: -9px;
+    height: 200px;
+    width: 88px;
+    position: relative;
+    background: linear-gradient(90deg, red, purple);
+}
+.glass-top:before,
+.glass-top:after {
+    border-bottom: 200px solid red;
+}
+.glass-top:before {
+    left: -10px;
+    border-left: 10px solid transparent;
+}
+.glass-top:after {
+    left: 88px;
+    border-right: 10px solid transparent;
+    border-bottom: 200px solid purple;
+}
+.glass-bottom {
+    z-index: 1;
+    opacity: 0.18;
+    left: -9px;
+    height: 50px;
+    width: 88px;
+    position: relative;
+    background: linear-gradient(90deg, red, purple);
+}
+.glass-bottom:before,
+.glass-bottom:after {
+    border-top: 50px solid purple;
+    border-bottom: none;
+}
+.glass-bottom:before {
+    left: -10px;
+    border-left: 10px solid transparent;
+    border-top-color: red;
+}
+.glass-bottom:after {
+    left: 88px;
+    border-right: 10px solid transparent;
+}
+.stand-top {
+    z-index: 1;
+    left: 2px;
+    height: 50px;
+    width: 67px;
+    position: relative;
+    background: linear-gradient(90deg, grey, #ccc);
+}
+.stand-top:before,
+.stand-top:after {
+    border-top: 50px solid #ccc;
+    border-bottom: none;
+}
+.stand-top:before {
+    left: -10px;
+    border-top-color: grey;
+    border-left: 10px solid transparent;
+}
+.stand-top:after {
+    left: 67px;
+    border-right: 10px solid transparent;
+}
+.stand-bottom {
+    top: -30px;
+    left: -3px;
+    height: 80px;
+    width: 77px;
+    position: relative;
+    background: linear-gradient(90deg, grey, #ccc);
+}
+.stand-bottom:before,
+.stand-bottom:after {
+    border-bottom: 80px solid #ccc;
+    border-top: none;
+}
+.stand-bottom:before {
+    left: -10px;
+    border-left: 10px solid transparent;
+    border-bottom-color: grey;
+}
+.stand-bottom:after {
+    left: 77px;
+    border-right: 10px solid transparent;
+}
+.lava-tube {
+    height: 250px;
+    width: 87px;
+    position: absolute;
+    left: -8px;
+    z-index: 0;
+    overflow: hidden;
+    filter: url(#lava-effect);
+}
+.lava-tube .top {
+    position: relative;
+    top: -10px;
+    width: 97%;
+    left: 1%;
+    background: orange;
+    height: 20px;
+    border-radius: 50%;
+}
+.lava-tube .bottom {
+    position: relative;
+    top: 220px;
+    width: 96%;
+    left: 2%;
+    background: orange;
+    height: 30px;
+    border-radius: 50%;
+}
+.lava-tube .bottom.blob {
+    top: -30px;
+}
+.lava-tube .blob {
+    background: orange;
+    position: absolute;
+    border-radius: 50%;
+}
+.lava-tube .blob-topstart {
+    top: 100%;
+}
+.lava-tube .blob-bottomstart {
+    top: -40%;
+}
+.lava-tube .blob-1 {
+    width: 25px;
+    height: 31px;
+    left: 3px;
+    animation: blob-1-animation 14s 14s infinite;
+}
+.lava-tube .blob-2 {
+    width: 23px;
+    height: 20px;
+    left: 40px;
+    animation: blob-1-animation 23s 23s infinite;
+}
+.lava-tube .blob-3 {
+    width: 33px;
+    height: 29px;
+    left: 53px;
+    animation: blob-1-animation 18s 18s infinite;
+}
+.lava-tube .blob-4 {
+    width: 31px;
+    height: 29px;
+    left: 13px;
+    animation: blob-2-animation 12s 12s infinite;
+}
+.lava-tube .blob-5 {
+    width: 14px;
+    height: 17px;
+    left: 56px;
+    animation: blob-2-animation 21s 21s infinite;
+}
+*:before,
+*:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+}
+@keyframes blob-1-animation {
+    from {
+        transform: rotate(0deg);
+        top: -20%;
+    }
+    to {
+        transform: rotate(180deg);
+        top: 100%;
+    }
+}
+@keyframes blob-2-animation {
+    from {
+        transform: rotate(0deg);
+        top: 100%;
+    }
+    to {
+        transform: rotate(180deg);
+        top: -20%;
+    }
+}

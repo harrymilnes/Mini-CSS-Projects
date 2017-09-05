@@ -1,0 +1,27 @@
+html
+  head
+    title CSS Lava Lamp - Slim
+    meta name="author" content="Harry Milnes"
+    link rel="stylesheet" href="CSS/stylesheet.min.css"
+  body
+    .lamp
+      .cone
+      .lava-tube
+        .top
+        .blob.blob-1.blob-topstart
+        .blob.blob-2.blob-topstart
+        .blob.blob-3.blob-topstart
+        .blob.blob-4.blob-bottomstart
+        .blob.blob-5.blob-bottomstart
+        .bottom
+      .glass-top
+      .glass-bottom
+      .stand-top
+      .stand-bottom
+      
+    svg
+      defs
+        filter id="lava-effect"
+          feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"
+          feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="lava-effect"
+          feBlend in="SourceGraphic" in2="lava-effect"
